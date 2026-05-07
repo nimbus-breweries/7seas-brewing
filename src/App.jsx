@@ -32,10 +32,10 @@ const BREWERY = {
   accentHue: 210, accentSat: 50,
   heroImages: {
     home: "https://www.7seasbrewing.com/wp-content/uploads/MOUNTAIN-1.jpg",
-    beers: "https://www.7seasbrewing.com/wp-content/uploads/MOUNTAIN-1.jpg",
-    events: "https://www.7seasbrewing.com/wp-content/uploads/MOUNTAIN-1.jpg",
-    badges: "https://www.7seasbrewing.com/wp-content/uploads/MOUNTAIN-1.jpg",
-    rewards: "https://www.7seasbrewing.com/wp-content/uploads/MOUNTAIN-1.jpg",
+    beers: "",
+    events: "",
+    badges: "",
+    rewards: "",
   },
 };
 
@@ -167,7 +167,7 @@ const S={
 // HERO COMPONENT
 const PageHero=({image,title,subtitle,children})=>(
   <div style={{position:"relative",height:208,overflow:"hidden",marginBottom:16}}>
-    <div style={{position:"absolute",inset:0,background:`url(${image}) center/cover no-repeat`}}/>
+    <div style={{position:"absolute",inset:0,background:image?`url(${image}) center/cover no-repeat`:`linear-gradient(135deg,${C.accentDark} 0%,${C.tealDark} 100%)`,filter:image?"brightness(0.75)":"none"}}/>
     <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.35) 100%)"}}/>
     <div style={{position:"relative",zIndex:1,height:"100%",display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"0 20px 18px"}}>
       <div style={{fontFamily:fontD,fontWeight:700,fontSize:30,letterSpacing:.5,textTransform:"uppercase",lineHeight:1.1,color:"#fff"}}>{title}</div>
@@ -428,6 +428,7 @@ export default function BreweryLoyaltyApp({isAdmin=false,onOpenAdmin,onExitAdmin
 
   if(isAdmin) return(
     <div style={{position:"fixed",inset:0,display:"flex",fontFamily:font,background:"#111118",zIndex:9999,overflow:"hidden"}}>
+      <style>{`.admin-content [class~="cardP"],[class~="card"]{background:#1e2235!important;border-color:rgba(255,255,255,.1)!important}.admin-content input,.admin-content textarea,.admin-content select{background:#252840!important;border-color:rgba(255,255,255,.12)!important;color:#E8E8E8!important}.admin-content [style*="background:${C.card}"],.admin-content [style*=\"background:\"#FFFFFF\""]{background:#1e2235!important}`}</style>
       <aside style={{width:240,flexShrink:0,background:"#1a1a28",borderRight:"1px solid rgba(255,255,255,.08)",display:"flex",flexDirection:"column",height:"100vh",overflowY:"auto"}}>
         <div style={{padding:"20px 20px 12px"}}>
           <button onClick={()=>onExitAdmin&&onExitAdmin()} style={{display:"flex",alignItems:"center",gap:6,fontSize:13,fontWeight:600,color:"rgba(255,255,255,.5)",background:"none",border:"none",cursor:"pointer",marginBottom:20,padding:0}}>
@@ -460,7 +461,7 @@ export default function BreweryLoyaltyApp({isAdmin=false,onOpenAdmin,onExitAdmin
             <ChevronLeft size={14}/> Back to App
           </button>
         </div>
-        <div style={{padding:"24px 32px",color:C.text}}>
+        <div className="admin-content" style={{padding:"24px 32px",color:"#E8E8E8"}}>
           {adminTab==="dashboard"&&<AdminDashboard/>}
           {adminTab==="scanner"&&<AdminScanner/>}
           {adminTab==="beers"&&<AdminBeers/>}

@@ -24,7 +24,7 @@ const salesCards = [
   {
     icon: LayoutDashboard,
     title: "Admin Dashboard",
-    desc: "Tap the shield icon in the app header to access the full admin suite \u2014 analytics, member CRM, scheduling, and broadcast tools."
+    desc: "Full analytics, member CRM, beer management, event scheduling, and broadcast messaging — click Open Admin Dashboard to explore."
   },
   {
     icon: Sparkles,
@@ -55,7 +55,7 @@ export default function DemoWrapper() {
       display: "flex",
       height: "100vh",
       overflow: "hidden",
-      background: "radial-gradient(ellipse at 50% 50%, #0d1f30 0%, #070f18 60%, #040a10 100%)",
+      background: "radial-gradient(ellipse at 50% 115%, rgba(58,106,144,.35) 0%, rgba(37,74,104,.15) 30%, transparent 60%), radial-gradient(ellipse at 50% 50%, #0d1f30 0%, #070f18 60%, #040a10 100%)",
       fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
       color: "#E8E8E8",
     }}>
@@ -97,7 +97,7 @@ export default function DemoWrapper() {
           <img
             src="https://www.7seasbrewing.com/wp-content/themes/seven-seas/img/logo.png"
             alt={C.breweryShort}
-            style={{ height: 32, width: "auto", display: "block" }}
+            style={{ height: 32, width: "auto", display: "block", filter: "brightness(0) invert(1)", opacity: 0.9 }}
             onError={e => { e.target.style.display="none"; }}
           />
           <div style={{ fontSize: 13, color: "rgba(255,255,255,.4)", marginTop: 8 }}>Brewery Loyalty App</div>
@@ -113,7 +113,7 @@ export default function DemoWrapper() {
               <f.icon size={18} color="rgba(255,255,255,.3)" style={{ marginTop: 2, flexShrink: 0 }} />
               <div>
                 <div style={{ fontWeight: 600, fontSize: 14 }}>{f.title}</div>
-                <div style={{ fontSize: 13, color: "rgba(255,255,255,.4)", marginTop: 2, lineHeight: 1.4 }}>{f.desc}</div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,.4)", marginTop: 2, lineHeight: 1.4, textWrap: "balance" }}>{f.desc}</div>
               </div>
             </div>
           ))}
@@ -147,7 +147,7 @@ export default function DemoWrapper() {
           height: "min(calc(100vh - 48px), 856px)",
           background: "#0a0a0a",
           borderRadius: 52,
-          boxShadow: "0 0 0 1px #2a2a2a, 0 40px 100px rgba(0,0,0,.9), 0 12px 40px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.08)",
+          boxShadow: "0 0 0 1px #1a2a3a, 0 40px 100px rgba(0,0,0,.9), 0 12px 40px rgba(0,0,0,.7), 0 0 80px rgba(58,106,144,.5), 0 0 160px rgba(58,106,144,.25), inset 0 1px 0 rgba(255,255,255,.08)",
           padding: 12,
           flexShrink: 0,
         }}>
