@@ -31,11 +31,11 @@ const BREWERY = {
   description: "First WA craft brewery to can beer. Best Beer in the South Sound six years running. Waterfront taproom accessible by boat. Two locations: Gig Harbor waterfront and Tacoma's Historic Heidelberg Brewery. Barrel room, beer lab, and 16 taps of PNW craft.",
   accentHue: 210, accentSat: 50,
   heroImages: {
-    home: "https://www.7seasbrewing.com/wp-content/uploads/MOUNTAIN-1.jpg",
-    beers: "",
-    events: "",
-    badges: "",
-    rewards: "",
+    home:    "https://www.7seasbrewing.com/wp-content/uploads/MOUNTAIN-1.jpg",
+    beers:   "https://www.7seasbrewing.com/wp-content/uploads/IMG_5475-crop-1681492207-2048x678.jpg",
+    events:  "https://www.7seasbrewing.com/wp-content/uploads/IMG_5925.jpg",
+    badges:  "https://www.7seasbrewing.com/wp-content/uploads/IMG_7523-crop-1704317594-1914x1149.jpg",
+    rewards: "https://www.7seasbrewing.com/wp-content/uploads/IMG_8779-500x300.jpg",
   },
 };
 
